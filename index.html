@@ -65,12 +65,20 @@
 
   
     <form id="datasub" onsubmit="return false">
-        <div class="inputs">
+      <div class="inputs">
         <input name="username"   placeholder="Full name"     type="text" id="name_link0">  
-        <input name="userDOB"    placeholder="Date of birth" type="text" id="link_add_0">
-        <input name="usergender" placeholder="gender"        type="text" id="category_0">
-        <input name="usernumber" placeholder="phone number"  type="text" id="category_0">
+        
+ 
+
+        <input name="usernumber" placeholder="phone number"  type="tel"  id="category_0">
         <input name="usergrade"  placeholder="grade"         type="text" id="category_0">
+        <input name="userDOB"    placeholder="Date of birth" type="date" id="link_add_0">
+
+            <select name="usergender" > 
+            <option value="male">male</option>
+            <option value="female">female</option>
+            </select>
+
 
         </div>
         <div class="inputs">
