@@ -1,0 +1,45 @@
+table{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    }
+    table th{
+    text-transform: uppercase;
+    }
+    th,td{
+    padding: 5px;
+    }
+
+    .inputs{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inputs input{
+       margin-right: 0.5rem;
+    }
+
+    #subinput0{
+        width: 20%;
+    
+        margin: 1rem auto; 
+    }
+
+    form{
+        margin:0.5rem;
+        padding: 1rem;
+        border: 1px solid #050505;
+    }
+
+    #table_div{
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    @media (max-width: 1000px) {
+        .inputs{
+           flex-direction: column;
+        } 
+    }
