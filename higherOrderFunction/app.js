@@ -22,6 +22,7 @@ ArrQ5ForEach.forEach((value, index, ArrQ5ForEach)=> {
 
 document.write("Q5 ForEach = "+ArrQ5ForEach +"<br>");
 
+Map
 let ArrQ5Map = arrQ5.map(value=>{
   return 2**value;
 })

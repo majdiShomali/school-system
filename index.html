@@ -22,7 +22,7 @@
         <nav id="nav00" class="navbar navbar-expand-lg" style="background: #1c576ad1; color: #1abc9c;">
           <div class="container-fluid">
               <a id="logo0" class="navbar-brand" href="#">
-                  <img id="logo_image" src="images/logo.png" alt="" width="40" height="40" class="d-inline-block align-text-top ">
+                  <img id="logo_image" src="images/logo.png" alt="" width="40" height="40" class="d-inline-block align-text-top">
                 
                 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background: #1abc9c;" >
@@ -64,25 +64,24 @@
 
 
   
-    <form id="datasub" onsubmit="return false">
-      <div class="inputs">
-        <input name="username"   placeholder="Full name"     type="text" id="name_link0">  
+    <form id="datasub" >
+        <div class="inputs">
+        <input id="username"   name="username"   placeholder="Full name"     type="text" id="name_link0" required>  
         
- 
+        <input id="usernumber" name="usernumber" placeholder="phone number"  type="text" id="category_0" required>
+        <input id="usergrade"  name="usergrade"  placeholder="grade"         type="text" id="category_0" required>
+        <input id="userDOB"    name="userDOB"    placeholder="Date of birth" type="date" id="link_add_0" required>
 
-        <input name="usernumber" placeholder="phone number"  type="tel"  id="category_0">
-        <input name="usergrade"  placeholder="grade"         type="text" id="category_0">
-        <input name="userDOB"    placeholder="Date of birth" type="date" id="link_add_0">
+        <select id="usergender"  name="usergender" > 
+          <option value="male">male</option>
+          <option value="female">female</option>
+          </select>
 
-            <select name="usergender" > 
-            <option value="male">male</option>
-            <option value="female">female</option>
-            </select>
 
 
         </div>
         <div class="inputs">
-            <input id="subinput0" type="submit" value="add" >
+            <input id="subinput0" type="submit" value="Add" >
 
         </div>
         
@@ -93,12 +92,14 @@
 
 <div id="table_div">
     <table id = "table_body">
-    <tr>
+    <tr id="tablemain">
         <th>Full name</th>
         <th>Date of birth</th>
         <th>gender</th>
         <th>phone number</th>
         <th>grade</th>
+        <th>Update</th>
+        <th>delete</th>
         
     </tr>
     <tbody id="tbody">

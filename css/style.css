@@ -2,12 +2,18 @@ table{
     width: 100%;
     text-align: center;
     margin: 10px 0;
+    border: 2px solid black;
+    overflow-x: auto;
     }
     table th{
     text-transform: uppercase;
     }
     th,td{
     padding: 5px;
+   
+    }
+    tr{
+        border-bottom: 1px dashed black;
     }
 
     .inputs{
@@ -20,10 +26,20 @@ table{
        margin-right: 0.5rem;
     }
 
+    input:focus{
+        
+        transform: scale(1.1);
+        }
+
     #subinput0{
         width: 20%;
-    
+        
         margin: 1rem auto; 
+    }
+    #subinput0:hover{
+     
+        letter-spacing:2px;
+        
     }
 
     form{
@@ -37,9 +53,19 @@ table{
         flex-direction: column;
         overflow-y: auto;
     }
+    #logo_image{
+        border: 1px solid aqua;;
+        border-radius: 50%;
 
+    }
+    /* #tablemain{
+        font-size: 10px;
+    } */
     @media (max-width: 1000px) {
         .inputs{
            flex-direction: column;
         } 
+        table{
+            font-size: 10px;
+        }
     }
