@@ -52,6 +52,7 @@ table{
         display: flex;
         flex-direction: column;
         overflow-y: auto;
+        margin: 0 0.5rem;
     }
     #logo_image{
         border: 1px solid aqua;;
