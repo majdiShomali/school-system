@@ -5,17 +5,20 @@ table{
     border: 2px solid black;
     overflow-x: auto;
     }
+
     table th{
     text-transform: uppercase;
     }
+
     th,td{
     padding: 5px;
     border-right: 1px dashed black;
     }
+
     tr{
-        border-bottom: 2px solid black;
-        
+        border-bottom: 2px solid black;   
     }
+
     button{
         border-radius: 20%;
     }
@@ -33,7 +36,10 @@ table{
     .inputs input{
        margin-right: 0.5rem;
     }
-
+    input ,select{
+    width: 20%;
+    height: 5%;
+    }
     input:focus{
         
         transform: scale(1.1);
@@ -75,4 +81,23 @@ table{
         table{
             font-size: 10px;
         }
+
+        input{
+            width: 70%;
+            height: 10%;
+            margin-bottom: 5px;
+            }
+             input,select{
+            width: 71%;
+            height: 10%;
+            margin-bottom: 5px;
+            }
+
+
+            tr button{
+               font-size: 0px;
+               border-radius: 50%;
+               width: 20px;
+               height: 20px;
+            }
     }
