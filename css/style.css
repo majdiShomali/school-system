@@ -10,10 +10,18 @@ table{
     }
     th,td{
     padding: 5px;
-   
+    border-right: 1px dashed black;
     }
     tr{
-        border-bottom: 1px dashed black;
+        border-bottom: 2px solid black;
+        
+    }
+    button{
+        border-radius: 20%;
+    }
+  
+    .WelcomeContainer h2,h3{
+     text-align: center;
     }
 
     .inputs{
@@ -37,9 +45,7 @@ table{
         margin: 1rem auto; 
     }
     #subinput0:hover{
-     
-        letter-spacing:2px;
-        
+        letter-spacing:2px;   
     }
 
     form{

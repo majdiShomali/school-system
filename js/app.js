@@ -88,8 +88,8 @@ function showData(){
       <td>${arrData[i].userGender}</td>
       <td>${arrData[i].userNumber}</td>
       <td>${arrData[i].userGrade}</td>
-      <td><button onclick="update_data(${i})" id="update">update</td>
-      <td><button onclick="delete_data(${i})" id="delete">delete</td>
+      <td><button style="background: rgba(27, 164, 27, 0.732);" onclick="update_data(${i})" id="update">update</td>
+      <td><button style="background: rgba(209, 50, 50, 0.737);" onclick="delete_data(${i})" id="delete">delete</td>
       </tr>`;
       
      
