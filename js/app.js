@@ -4,11 +4,9 @@ let addUpdate=document.getElementById('subinput0');
 if(localStorage.arrData != null){
     arrData=JSON.parse(localStorage.arrData);
     showData();
-  }else{
-    arrData=[];
   }
-
-
+ 
+    let footer00=document.getElementById("myDIV");
 let userName;
 let userDOB;
 let userGender;
@@ -94,18 +92,26 @@ function showData(){
       
      
     }
-
+    
     document.getElementById("tbody").innerHTML=table;
-  
-
+    let tbody00=document.getElementById("tbody");
+    let footer00=document.getElementById("myDIV");
+   
+   
+    if(tbody00.offsetHeight>=340 && footer00.classList.value == "fixed-bottom"){
+      footer00.classList.remove("fixed-bottom");  
+    }else if(tbody00.offsetHeight<360 && footer00.classList.value != "fixed-bottom"){
+      footer00.classList.add("fixed-bottom");
+    }
+    console.log(footer00.classList.value);
+    console.log(tbody00.offsetHeight);
 }
 
-
-let userName0= document.getElementById("username");
-let userDOB0= document.getElementById("userDOB");
+let userName0=   document.getElementById("username");
+let userDOB0=    document.getElementById("userDOB");
 let userGender0= document.getElementById("usergender");
 let userNumber0= document.getElementById("usernumber");
-let userGrade0= document.getElementById("usergrade");
+let userGrade0=  document.getElementById("usergrade");
 
 function update_data(i){
   
