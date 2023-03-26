@@ -1,21 +1,18 @@
 
 let arrData=[];
-let addUpdate=document.getElementById('subinput0');
 if(localStorage.arrData != null){
     arrData=JSON.parse(localStorage.arrData);
-    showData();
+    render();
   }
  
-    let footer00=document.getElementById("myDIV");
+let footer00=document.getElementById("myDIV");
 let userName;
 let userDOB;
 let userGender;
 let userNumber;
 let userGrade;
-
-let addStatus="add";
-
-let updateindex;
+let userMajor;
+let userImg;
 
 
 let DataCollected=document.getElementById("datasub");
@@ -28,119 +25,71 @@ DataCollected.addEventListener("submit",function(event){
   userGender=event.target.usergender.value;
   userNumber=event.target.usernumber.value;
   userGrade=event.target.usergrade.value;
+  userMajor=event.target.usermajor.value;
+  userImg=event.target.userimg.value;
   DataCollected.reset();
 
-  let dataObj={
-     
-      userName:userName,
-      userDOB:userDOB,
-      userGender:userGender,
-      userNumber:userNumber,
-      userGrade:userGrade
-  }
 
-  if(addStatus==="add"){
-   
-     arrData.push(dataObj);
+  let student = new Person(userName,userDOB ,userGender,userNumber,userGrade,userMajor,userImg);
+
+     arrData.push(student);
      localStorage.setItem('arrData',JSON.stringify(arrData) );
-     showData();
-
-
-  }else if(addStatus=="update"){
-
-      
-      arrData[updateindex]=dataObj;
-      localStorage.setItem('arrData',JSON.stringify(arrData) );
-      addStatus="add";
-      addUpdate.value="Add"
-      location.reload();
-  }
-
-
+     render();
 });
 
 
-
-
-
-
-
-
-
-
-
-
-//-------------read or show data-----------------//
-function showData(){
-    let table='';
-    for(let i=0;i<arrData.length;i++){
-
-        
-
-
-
-        table += `
-      <tr>
-      <td>${arrData[i].userName}</td>
-      <td>${arrData[i].userDOB}</td>
-      <td>${arrData[i].userGender}</td>
-      <td>${arrData[i].userNumber}</td>
-      <td>${arrData[i].userGrade}</td>
-      <td><button style="background: rgba(27, 164, 27, 0.732);" onclick="update_data(${i})" id="update">update</td>
-      <td><button style="background: rgba(209, 50, 50, 0.737);" onclick="delete_data(${i})" id="delete">delete</td>
-      </tr>`;
-      
-     
-    }
-    
-    document.getElementById("tbody").innerHTML=table;
-    let tbody00=document.getElementById("tbody");
-    let footer00=document.getElementById("myDIV");
-   
-   
-    if(tbody00.offsetHeight>=340 && footer00.classList.value == "fixed-bottom"){
-      footer00.classList.remove("fixed-bottom");  
-    }else if(tbody00.offsetHeight<360 && footer00.classList.value != "fixed-bottom"){
-      footer00.classList.add("fixed-bottom");
-    }
-    console.log(footer00.classList.value);
-    console.log(tbody00.offsetHeight);
-}
-
-let userName0=   document.getElementById("username");
-let userDOB0=    document.getElementById("userDOB");
-let userGender0= document.getElementById("usergender");
-let userNumber0= document.getElementById("usernumber");
-let userGrade0=  document.getElementById("usergrade");
-
-function update_data(i){
+function Person(userName,userDOB ,userGender,userNumber,userGrade,userMajor,userImg) {
+  this.userName = userName; 
+  this.userDOB = userDOB;
+  this.userGender = userGender;
+  this.userNumber = userNumber;
+  this.userGrade = userGrade;
+  this.userMajor = userMajor;
+  this.userImg = userImg;
   
 
-    userName0.value="";
-    userDOB0.value="";
-    userGender0.value="";
-    userNumber0.value="";
-    userGrade0.value="";
+}
 
 
-    userName0.value=arrData[i].userName;
-    userDOB0.value=arrData[i].userDOB;
-    userGender0.value=arrData[i].userGender;
-    userNumber0.value=arrData[i].userNumber;
-    userGrade0.value=arrData[i].userGrade;
 
+//-------------show data-----------------//
+function render(){
+  for(let i=0;i<arrData.length;i++){
 
-    addStatus="update";
-    addUpdate.value="update"
-    updateindex=i;
+    let sdcard= document.getElementById("student_card");
+    let divContainer = document.createElement('div');
+    let img0 = document.createElement('img');
+    img0.src=`${arrData[i].userImg}`;
+    let ul = document.createElement("ul");
+    let li1= document.createElement("li");
+    li1.textContent=`Name: ${arrData[i].userName}`;
+    let li2= document.createElement("li");
+    li2.textContent=`Gender: ${arrData[i].userGender}`;
+    let li3= document.createElement("li");
+    li3.textContent=`Number: ${arrData[i].userNumber}`;
+    let li4= document.createElement("li");
+    li4.textContent=`Grade: ${arrData[i].userGrade}`;
+    let li5= document.createElement("li");
+    li5.textContent=`Major: ${arrData[i].userMajor}`;
+  
+    ul.appendChild(li1);
+    ul.appendChild(li2);
+    ul.appendChild(li3);
+    ul.appendChild(li4);
+    ul.appendChild(li5);
+  
+    divContainer.appendChild(img0);
+    divContainer.appendChild(ul);
+    sdcard.appendChild(divContainer);
+
+  }
 }
 
 
 
 
-function delete_data(i){
 
-    arrData.splice(i,1);
-  localStorage.arrData=JSON.stringify(arrData);
-  location.reload();
-  }
+
+
+
+

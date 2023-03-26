@@ -1,28 +1,4 @@
-table{
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-    border: 2px solid black;
-    overflow-x: auto;
-    }
 
-    table th{
-    text-transform: uppercase;
-    }
-
-    th,td{
-    padding: 5px;
-    border-right: 1px dashed black;
-    }
-
-    tr{
-        border-bottom: 2px solid black;   
-    }
-
-    button{
-        border-radius: 20%;
-    }
-  
     .WelcomeContainer h2,h3{
      text-align: center;
     }
@@ -60,27 +36,46 @@ table{
         border: 1px solid #050505;
     }
 
-    #table_div{
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-        margin: 0 0.5rem;
-    }
+
     #logo_image{
         border: 1px solid aqua;;
         border-radius: 50%;
 
     }
-    /* #tablemain{
-        font-size: 10px;
-    } */
+   
+
+    #student_card{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-auto-rows: minmax(100px,auto);
+        grid-gap: 10px;
+        justify-items: center;
+        align-items: center;
+    }
+    #student_card div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(47, 47, 120, 0.745);
+      padding: 0.5rem;
+      border: 1px solid #050505;
+      border-radius: 0.5rem;
+    }
+    #student_card div img{
+        width: 100px;
+        height: 100px;
+      }
+
+    ul {
+        list-style-type: none;
+     }
+    
     @media (max-width: 1000px) {
         .inputs{
            flex-direction: column;
         } 
-        table{
-            font-size: 10px;
-        }
+      
 
         input{
             width: 70%;
@@ -94,10 +89,13 @@ table{
             }
 
 
-            tr button{
-               font-size: 0px;
-               border-radius: 50%;
-               width: 20px;
-               height: 20px;
+         
+            #student_card{
+              
+                grid-template-columns: repeat(2,1fr);
+            
             }
+           
+
+          
     }
